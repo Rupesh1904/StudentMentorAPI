@@ -32,6 +32,10 @@ public class MentorService {
     @Autowired
     private UserRepository userRepository;
 
+    public MentorService(MentorRepository mentorRepository2, ReviewRepository reviewRepository2,
+            RecommendStudentRepository recommendStudentRepository2, UserRepository userRepository2) {
+    }
+
     public void rateMentor(Long mentorId, int rating) {
         Optional<Mentor> mentorOptional = mentorRepository.findById(mentorId);
             if (mentorOptional.isPresent()) {
